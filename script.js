@@ -10,7 +10,7 @@ const account1 = {
 };
 
 const account2 = {
-    owner: 'Neeraj Sanyal',
+    owner: 'John Stark',
     movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
     interestRate: 1.5,
     pin: 2222,
@@ -57,6 +57,7 @@ const inputTransferAmount = document.querySelector('.form__input--amount');
 const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
+console.log('Username:tb pin:1111, Username:js pin:2222, Username:ss pin:3333, Username:ms pin:4444')
 
 const displayMovements = function (acc, sort = false) {
     containerMovements.innerHTML = '';
@@ -72,7 +73,6 @@ const displayMovements = function (acc, sort = false) {
         containerMovements.insertAdjacentHTML('afterbegin', html)
     })
 }
-
 const calcDisplaySummary = function (acc) {
     const incomes = acc.movements.filter(mov => mov > 0).reduce((acc, mov) => acc + mov, 0);
     labelSumIn.textContent = `${incomes.toFixed(2)}`
